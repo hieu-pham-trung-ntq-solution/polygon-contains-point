@@ -9,7 +9,7 @@ public class Tests {
     @Test
     public void testSimplePolygon() {
 
-        Polygon polygon = Polygon.Builder()
+        Polygon polygon = new Polygon.Builder()
                 .addVertex(new Point(1, 3))
                 .addVertex(new Point(2, 8))
                 .addVertex(new Point(5, 4))
@@ -31,7 +31,7 @@ public class Tests {
      */
     @Test
     public void testPolygonWithHoles() {
-        Polygon polygon = Polygon.Builder()
+        Polygon polygon = new Polygon.Builder()
                 .addVertex(new Point(1, 2)) // polygon
                 .addVertex(new Point(1, 6))
                 .addVertex(new Point(8, 7))
@@ -61,7 +61,7 @@ public class Tests {
 
         // example 1
         System.out.println("Figure 6a");
-        Polygon polygon = Polygon.Builder()
+        Polygon polygon = new Polygon.Builder()
                 .addVertex(new Point(1, 3))
                 .addVertex(new Point(9, 3))
                 .addVertex(new Point(9, 7))
@@ -77,7 +77,7 @@ public class Tests {
 
         // example 2
         System.out.println("Figure 6b");
-        polygon = Polygon.Builder()
+        polygon = new Polygon.Builder()
                 .addVertex(new Point(1, 3))
                 .addVertex(new Point(3, 5))
                 .addVertex(new Point(5, 3))
@@ -98,7 +98,7 @@ public class Tests {
     @Test
     public void testMapCoordinates1() {
 
-        Polygon polygon = Polygon.Builder()
+        Polygon polygon = new Polygon.Builder()
                 .addVertex(new Point(42.499148, 27.485196))
                 .addVertex(new Point(42.498600, 27.480000))
                 .addVertex(new Point(42.503800, 27.474680))
@@ -127,7 +127,7 @@ public class Tests {
     @Test
     public void testMapCoordinates2() {
 
-        Polygon polygon = Polygon.Builder()
+        Polygon polygon = new Polygon.Builder()
                 .addVertex(new Point(40.481171, 6.4107070)) // NE
                 .addVertex(new Point(40.480248, 6.4101200)) // SE. This point doesn't fail the test anymore
                 .addVertex(new Point(40.480237, 6.4062790)) // SW
@@ -144,7 +144,7 @@ public class Tests {
     @Test
     public void testParallel() {
 
-        Polygon polygon = Polygon.Builder()
+        Polygon polygon = new Polygon.Builder()
                 .addVertex(new Point(0, 0))
                 .addVertex(new Point(0, 1))
                 .addVertex(new Point(1, 2))
@@ -166,7 +166,7 @@ public class Tests {
          * https://en.wikipedia.org/wiki/Point_in_polygon#Ray_casting_algorithm
          */
 
-        Polygon polygon = Polygon.Builder()
+        Polygon polygon = new Polygon.Builder()
                 .addVertex(new Point(-1, -1))
                 .addVertex(new Point(-1, 1))
                 .addVertex(new Point(1, 1))
@@ -176,7 +176,7 @@ public class Tests {
         // it's false !
         assertEquals(false, polygon.contains(new Point(0, 1)));
 
-        polygon = Polygon.Builder()
+        polygon = new Polygon.Builder()
                 .addVertex(new Point(-1, -1))
                 .addVertex(new Point(-1, 1))
                 .addVertex(new Point(1, 1))
